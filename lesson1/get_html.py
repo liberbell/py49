@@ -25,9 +25,13 @@ imgage_tags2 = soup.find_all("img", id="small-size")
 
 # print(imgage_tag2.get("src"))
 
-for i in image_tags:
-    # print(i)
-    print(i["src"])
+# for i in image_tags:
+#     # print(i)
+#     print(i["src"])
+
 print("------")
+image_src_list = []
 for image in image_tags:
-    print(image.get("src"))
+    image_src_list.append(image.get("src"))
+
+print(image_src_list)
