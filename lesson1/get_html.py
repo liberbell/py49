@@ -40,7 +40,7 @@ print("------")
 
 a_tags = soup.find_all("a")
 href_list = []
-for href in image_tags:
+for href in a_tags:
     href_list.append(href.get("href"))
 
 print(href_list)
