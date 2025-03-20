@@ -42,6 +42,6 @@ a_tags = soup.find_all("a")
 print(a_tags)
 href_list = []
 for href in a_tags:
-    href_list.append(a_tags.text)
+    href_list.append(href.get("href"))
 
 print(href_list)
