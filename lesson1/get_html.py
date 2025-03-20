@@ -54,4 +54,4 @@ shop = {
     "product": ["tomato", "carrot", "watermelon"],
     "price": ["$1.99", "$2.48", "$10,99"]
 }
-pd.DataFrame(shop)
+print(pd.DataFrame(shop))
