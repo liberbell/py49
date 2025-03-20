@@ -41,7 +41,10 @@ print("------")
 a_tags = soup.find_all("a")
 print(a_tags)
 href_list = []
+a_text_list = []
 for href in a_tags:
     href_list.append(href.get("href"))
+    a_text_list.append(href.get_text())
 
 print(href_list)
+print(a_text_list)
