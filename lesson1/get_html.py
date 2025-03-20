@@ -8,5 +8,7 @@ response = requests.get(url=url2)
 # print(response.status_code)
 # print(response.text)
 
-soup = BeautifulSoup(response.text)
-print(soup.prettify())
+soup = BeautifulSoup(response.text, features="html.parser")
+# print(soup.prettify())
+
+print(soup.find("img"))
