@@ -11,4 +11,4 @@ response = requests.get(url=url2)
 soup = BeautifulSoup(response.text, features="html.parser")
 # print(soup.prettify())
 
-print(soup.find("img"))
+print(soup.find_all("img"))
