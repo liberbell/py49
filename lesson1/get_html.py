@@ -62,4 +62,4 @@ web_data = {
     "image_src": image_src_list
 }
 df = pd.DataFrame(web_data)
-df.to_csv("webdata.csv")
+df.to_csv("webdata.csv", index=False)
