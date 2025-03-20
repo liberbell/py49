@@ -22,3 +22,5 @@ imgage_tag2 = soup.find("img", id="small-size")
 imgage_tags2 = soup.find_all("img", id="small-size")
 print(imgage_tag2)
 print(imgage_tags2)
+
+print(imgage_tag2.get("src"))
