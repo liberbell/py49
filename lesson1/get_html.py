@@ -1,8 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = "https://hosh-it.github.io/scraping-practice/"
-response = requests.get(url=url)
+url1 = "https://hosh-it.github.io/scraping-practice/"
+url2 = "https://hosh-it.github.io/scraping-practice/practice.html"
+response = requests.get(url=url2)
 
 # print(response.status_code)
 # print(response.text)
