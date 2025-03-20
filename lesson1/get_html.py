@@ -55,3 +55,10 @@ shop = {
     "price": ["$1.99", "$2.48", "$10,99"]
 }
 print(pd.DataFrame(shop))
+
+web_data = {
+    "a_text": a_text_list,
+    "href": href_list,
+    "image_src": image_src_list
+}
+print(pd.DataFrame(web_data))
