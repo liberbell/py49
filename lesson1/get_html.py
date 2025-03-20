@@ -24,3 +24,7 @@ print(imgage_tag2)
 print(imgage_tags2)
 
 print(imgage_tag2.get("src"))
+
+for i in image_tags:
+    print(i)
+    print(i["src"])
