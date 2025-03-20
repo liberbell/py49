@@ -35,3 +35,12 @@ for image in image_tags:
     image_src_list.append(image.get("src"))
 
 print(image_src_list)
+
+print("------")
+
+a_tags = soup.find_all("a")
+href_list = []
+for href in image_tags:
+    href_list.append(href.get("href"))
+
+print(href_list)
