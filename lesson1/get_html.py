@@ -61,4 +61,5 @@ web_data = {
     "href": href_list,
     "image_src": image_src_list
 }
-print(pd.DataFrame(web_data))
+df = pd.DataFrame(web_data)
+df.to_csv("webdata.csv")
