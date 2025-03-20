@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import pandas as pd
 
 url1 = "https://hosh-it.github.io/scraping-practice/"
 url2 = "https://hosh-it.github.io/scraping-practice/practice.html"
@@ -48,3 +49,9 @@ for href in a_tags:
 
 print(href_list)
 print(a_text_list)
+
+shop = {
+    "product": ["tomato", "carrot", "watermelon"],
+    "price": ["$1.99", "$2.48", "$10,99"]
+}
+pd.DataFrame(shop)
