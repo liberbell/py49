@@ -5,4 +5,6 @@ import pandas as pd
 url = "https://hosh-it.github.io/scraping-practice/"
 response = requests.get(url)
 
-print(response)
+# print(response.text)
+soup = BeautifulSoup(response.text, features="html.parser")
+print(soup)
