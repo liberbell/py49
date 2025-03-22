@@ -20,9 +20,10 @@ for a_tag in a_tags:
 # print(a_tags_text)
 # print(a_tags_urls)
 
+sub_response = {}
 for get_url in a_tags_urls:
     sub_url = url + "/" + get_url
-    sub_response = requests.get(sub_url)
+    sub_response.append(requests.get(sub_url))
     # print(sub_response.text)
 
 sub_soup = BeautifulSoup(sub_response, features="html.parser")
