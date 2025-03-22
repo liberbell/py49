@@ -12,10 +12,13 @@ soup = BeautifulSoup(response.text, features="html.parser")
 a_tags = soup.find_all("a")
 # print(a_tags)
 a_tags_text = []
-img_urls = []
 for a_tag in a_tags:
     a_tags_text.append(a_tag.get_text())
-    img_urls.append(a_tags.get("href"))
 
 # print(a_tags_text)
+
+img_tags = soup.find_all("img")
+img_urls = []
+for img_tag in img_tags:
+    img_urls.append(img_tags.get("src"))
 print(img_urls)
