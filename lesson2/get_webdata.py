@@ -20,9 +20,14 @@ for a_tag in a_tags:
 # print(a_tags_text)
 # print(a_tags_urls)
 
-img_tags = soup.find_all("img")
-# print(img_tags)
-img_urls = []
-for img_tag in img_tags:
-    img_urls.append(img_tag.get("src"))
-print(img_urls)
+for get_url in a_tags_urls:
+    sub_url = url + "/" + get_url
+    sub_response = requests.get(sub_url)
+    print(sub_response.text)
+
+# img_tags = soup.find_all("img")
+# # print(img_tags)
+# img_urls = []
+# for img_tag in img_tags:
+#     img_urls.append(img_tag.get("src"))
+# print(img_urls)
