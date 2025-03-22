@@ -10,7 +10,7 @@ soup = BeautifulSoup(response.text, features="html.parser")
 # print(soup)
 
 a_tags = soup.find_all("a")
-print(a_tags)
+# print(a_tags)
 a_tags_text = []
-for a_tag_text in a_tags:
-    a_tags_text.append(a_tags_text.get_text())
+for a_tag in a_tags:
+    a_tags_text.append(a_tag.get_text())
