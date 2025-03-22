@@ -17,7 +17,8 @@ for a_tag in a_tags:
 
 # print(a_tags_text)
 
-img_tags = soup.find_all("img")
+img_tags = soup.find("img")
+print(img_tags)
 img_urls = []
 for img_tag in img_tags:
     img_urls.append(img_tags.get("src"))
