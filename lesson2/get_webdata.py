@@ -7,4 +7,7 @@ response = requests.get(url)
 
 # print(response.text)
 soup = BeautifulSoup(response.text, features="html.parser")
-print(soup)
+# print(soup)
+
+a_tags = soup.find_all("a")
+print(a_tags)
