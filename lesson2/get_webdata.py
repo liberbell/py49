@@ -23,7 +23,10 @@ for a_tag in a_tags:
 for get_url in a_tags_urls:
     sub_url = url + "/" + get_url
     sub_response = requests.get(sub_url)
-    print(sub_response.text)
+    # print(sub_response.text)
+
+sub_soup = BeautifulSoup(sub_response, features="html.parser")
+print(sub_soup)
 
 # img_tags = soup.find_all("img")
 # # print(img_tags)
