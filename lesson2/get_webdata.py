@@ -24,8 +24,9 @@ for get_url in a_tags_urls:
     sub_url = url + "/" + get_url
     sub_response = (requests.get(sub_url))
     sub_soup = BeautifulSoup(sub_response.text, features="html.parser")
-    p_tags = sub_soup.find_all("p")
-    print(p_tags)
+    body_texts = sub_soup.find_all("p")
+    for body_text in body_texts:
+        body_text.get_text()
     # print(sub_response.text)
 
 
