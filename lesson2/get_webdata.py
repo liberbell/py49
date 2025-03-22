@@ -19,15 +19,17 @@ for a_tag in a_tags:
 
 # print(a_tags_text)
 # print(a_tags_urls)
-
-sub_response = {}
+sub_soup = ""
 for get_url in a_tags_urls:
     sub_url = url + "/" + get_url
-    sub_response.append(requests.get(sub_url))
+    sub_response = (requests.get(sub_url))
+    sub_soup = BeautifulSoup(sub_response.text, features="html.parser")
+    p_tags = sub_soup.find_all("p")
+    print(p_tags)
     # print(sub_response.text)
 
-sub_soup = BeautifulSoup(sub_response, features="html.parser")
-print(sub_soup)
+
+# print(sub_soup)
 
 # img_tags = soup.find_all("img")
 # # print(img_tags)
