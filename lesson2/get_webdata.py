@@ -33,8 +33,15 @@ for get_url in a_tags_urls:
         # print(body)
     # print("---P2---")
     all_text.append(texts)
-print(all_text)
+
+    img_urls = sub_soup.find_all(img)
+    urls = []
+    for img_url in img_urls:
+        urls.append(img_url.get("src"))
+# print(all_text)
     # print(sub_response.text)
+
+
 
 web_data = {
     "title": a_tags_text,
@@ -44,6 +51,8 @@ web_data = {
 
 df = pd.DataFrame(web_data)
 df.to_csv("news_topic.csv", index=False)
+
+
 
 
 # print(sub_soup)
