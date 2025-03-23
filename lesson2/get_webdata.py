@@ -50,13 +50,16 @@ web_data = {
 
 df = pd.DataFrame(web_data)
 
-for img_url in img_urls:
-    get_img_url = url + "/" + img_url
-    # print(get_img_url)
-    img_name = img_url[4:]
-    response_image = requests.get(get_img_url)
-    with open(img_name, "wb") as f:
-        f.write(response_image.content)
+for index, row in df.iterrows():
+    print(index, row)
+
+# for img_url in img_urls:
+#     get_img_url = url + "/" + img_url
+#     # print(get_img_url)
+#     img_name = img_url[4:]
+#     response_image = requests.get(get_img_url)
+#     with open(img_name, "wb") as f:
+#         f.write(response_image.content)
 # print(df)
 # df.to_csv("news_topic.csv", index=False)
 
