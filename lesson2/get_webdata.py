@@ -29,7 +29,8 @@ for get_url in a_tags_urls:
     for body_text in body_texts:
         body = body_text.get_text()
         print(body)
-        print("------")
+        print("---P1---")
+    print("---P2---")
     # print(sub_response.text)
 
 
