@@ -31,7 +31,7 @@ for get_url in a_tags_urls:
     for body_text in body_texts:
         texts += body_text.get_text()
         # print(body)
-    print("---P2---")
+    # print("---P2---")
     all_text.append(texts)
 print(all_text)
     # print(sub_response.text)
@@ -42,6 +42,8 @@ web_data = {
     "content": all_text
 }
 
+df = pd.DataFrame(web_data)
+df.to_csv("news_topic.csv", index=False)
 
 
 # print(sub_soup)
