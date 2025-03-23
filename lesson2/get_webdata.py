@@ -60,8 +60,8 @@ web_data = {
 }
 
 df = pd.DataFrame(web_data)
-print(df)
-# df.to_csv("news_topic.csv", index=False)
+# print(df)
+df.to_csv("news_topic.csv", index=False)
 
 
 
