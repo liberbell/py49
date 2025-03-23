@@ -41,17 +41,6 @@ for get_url in a_tags_urls:
     for img_tag in img_tags:
         img_urls.append(img_tag.get("src"))
 
-# print(img_urls)
-
-#     
-# print(img_urls)
-    # urls.append(url)
-    # print(urls)
-# print(all_text)
-    # print(sub_response.text)
-
-
-
 web_data = {
     "title": a_tags_text,
     "url": a_tags_urls,
@@ -60,17 +49,14 @@ web_data = {
 }
 
 df = pd.DataFrame(web_data)
+
+for img_url in img_urls:
+    get_img_url = url + "/" + img_url
+    # print(get_img_url)
+    img_name = img_url[4:]
+    response_image = requests.get(get_img_url)
+    with open(img_name, "wb") as f:
+        f.write(response_image.content)
 # print(df)
-df.to_csv("news_topic.csv", index=False)
+# df.to_csv("news_topic.csv", index=False)
 
-
-
-
-# print(sub_soup)
-
-# img_tags = soup.find_all("img")
-# # print(img_tags)
-# img_urls = []
-# for img_tag in img_tags:
-#     img_urls.append(img_tag.get("src"))
-# print(img_urls)
