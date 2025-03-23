@@ -26,11 +26,13 @@ for get_url in a_tags_urls:
     sub_soup = BeautifulSoup(sub_response.text, features="html.parser")
     body_texts = sub_soup.find_all("p")
     # print(body_texts)
+    texts = []
     for body_text in body_texts:
         body = body_text.get_text()
-        print(body)
-        print("---P1---")
+        # print(body)
+        texts.append(body)
     print("---P2---")
+    print(texts)
     # print(sub_response.text)
 
 
