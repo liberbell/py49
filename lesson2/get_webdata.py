@@ -19,14 +19,16 @@ for a_tag in a_tags:
 
 # print(a_tags_text)
 # print(a_tags_urls)
-sub_soup = ""
+
 for get_url in a_tags_urls:
     sub_url = url + "/" + get_url
     sub_response = (requests.get(sub_url))
     sub_soup = BeautifulSoup(sub_response.text, features="html.parser")
     body_texts = sub_soup.find_all("p")
+    # print(body_texts)
     for body_text in body_texts:
-        body_text.get_text()
+        body = body_text.get_text()
+        print(body_text)
     # print(sub_response.text)
 
 
