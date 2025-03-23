@@ -26,20 +26,27 @@ for get_url in a_tags_urls:
     sub_response = (requests.get(sub_url))
     sub_soup = BeautifulSoup(sub_response.text, features="html.parser")
     body_texts = sub_soup.find_all("p")
+    img_tags = sub_soup.find_all("img")
+    # print(img_tags)
     # print(body_texts)
     texts = ""
+    img_urls = []
     for body_text in body_texts:
         texts += body_text.get_text()
         # print(body)
     # print("---P2---")
     all_text.append(texts)
 
-img_tags = sub_soup.find_all("img")
-img_urls = []
-for img_tag in img_tags:
-    img_urls.append(img_tag.get("src"))
-    print(img_urls)
-print(img_urls)
+    for img_tag in img_tags:
+        img_urls.append(img_tag.get("src"))
+        print(img_urls)
+
+
+
+# for img_tag in img_tags:
+#     img_urls.append(img_tag.get("src"))
+#     
+# print(img_urls)
     # urls.append(url)
     # print(urls)
 # print(all_text)
