@@ -51,7 +51,7 @@ web_data = {
 df = pd.DataFrame(web_data)
 
 for index, row in df.iterrows():
-    print(index, row)
+    print(row)
 
 # for img_url in img_urls:
 #     get_img_url = url + "/" + img_url
