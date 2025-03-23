@@ -34,11 +34,12 @@ for get_url in a_tags_urls:
     # print("---P2---")
     all_text.append(texts)
 
-    img_tags = sub_soup.find_all("img")
-    img_urls = []
-    for img_tag in img_tags:
-        img_urls.append(img_tag.get("src"))
+img_tags = sub_soup.find_all("img")
+img_urls = []
+for img_tag in img_tags:
+    img_urls.append(img_tag.get("src"))
     print(img_urls)
+print(img_urls)
     # urls.append(url)
     # print(urls)
 # print(all_text)
