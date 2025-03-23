@@ -40,13 +40,9 @@ for get_url in a_tags_urls:
 
     for img_tag in img_tags:
         img_urls.append(img_tag.get("src"))
-        print(img_urls)
 
+# print(img_urls)
 
-
-
-# for img_tag in img_tags:
-#     img_urls.append(img_tag.get("src"))
 #     
 # print(img_urls)
     # urls.append(url)
@@ -59,10 +55,12 @@ for get_url in a_tags_urls:
 web_data = {
     "title": a_tags_text,
     "url": a_tags_urls,
-    "content": all_text
+    "content": all_text,
+    "image url": img_urls
 }
 
 df = pd.DataFrame(web_data)
+print(df)
 # df.to_csv("news_topic.csv", index=False)
 
 
