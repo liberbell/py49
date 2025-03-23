@@ -38,8 +38,9 @@ for get_url in a_tags_urls:
     urls = []
     for img_url in img_urls:
         url = img_url.get("src")
-    urls.append(url)
-    print(urls)
+        print(url)
+    # urls.append(url)
+    # print(urls)
 # print(all_text)
     # print(sub_response.text)
 
