@@ -21,6 +21,7 @@ for a_tag in a_tags:
 # print(a_tags_urls)
 
 all_text = []
+img_urls = []
 for get_url in a_tags_urls:
     sub_url = url + "/" + get_url
     sub_response = (requests.get(sub_url))
@@ -30,7 +31,7 @@ for get_url in a_tags_urls:
     # print(img_tags)
     # print(body_texts)
     texts = ""
-    img_urls = []
+    
     for body_text in body_texts:
         texts += body_text.get_text()
         # print(body)
@@ -40,6 +41,7 @@ for get_url in a_tags_urls:
     for img_tag in img_tags:
         img_urls.append(img_tag.get("src"))
         print(img_urls)
+
 
 
 
