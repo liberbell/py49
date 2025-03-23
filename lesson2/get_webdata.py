@@ -36,6 +36,13 @@ for get_url in a_tags_urls:
 print(all_text)
     # print(sub_response.text)
 
+web_data = {
+    "title": a_tags_text,
+    "url": a_tags_urls,
+    "content": all_text
+}
+
+
 
 # print(sub_soup)
 
