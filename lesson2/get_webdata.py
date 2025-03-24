@@ -55,7 +55,7 @@ for index, row in df.iterrows():
     get_img_url = url + "/" + image_url
     response_image = requests.get(get_img_url)
     f_name = image_url[4:]
-    with open(image_url, "wb") as f:
+    with open(f_name, "wb") as f:
         f.write(response_image.content)
 
 
