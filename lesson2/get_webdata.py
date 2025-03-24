@@ -51,10 +51,10 @@ web_data = {
 df = pd.DataFrame(web_data)
 
 for index, row in df.iterrows():
-    img_url = row["image url"]
-    get_img_url = url + "/" + img_url
+    image_url = row["image url"]
+    get_img_url = url + "/" + image_url
     response_image = requests.get(get_img_url)
-    with open(img_url, "wb") as f:
+    with open(image_url, "wb") as f:
         f.write(response_image.content)
 
 
