@@ -34,4 +34,6 @@ for link in links:
 for body_link in body_links:
     get_body_link = Home_URL + body_link
     body_response = requests(get_body_link, headers=headers)
-    
+    body_soup = BeautifulSoup(body_response, features="html.parser")
+
+    p_tag = body_soup.find("p", class_="paragraph_p18mfke4")
