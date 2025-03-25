@@ -11,4 +11,7 @@ headers = {
 nikkei_response = requests.get(Home_URL, headers=headers)
 soup = BeautifulSoup(nikkei_response.text, features="html.parser")
 
-print(soup)
+# print(soup)
+
+a_tags = soup.find_all("a")
+print(a_tags)
