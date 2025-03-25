@@ -24,4 +24,10 @@ titles = []
 for link in links:
     titles.append(link.get_text().replace("\u3000", ""))
 
-print(titles)
+# print(titles)
+
+body_links = []
+for link in links:
+    body_links.append(link.get("href"))
+
+print(body_links)
