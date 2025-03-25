@@ -22,6 +22,6 @@ links.insert(0, links_top)
 
 titles = []
 for link in links:
-    titles.append(link.get_text())
+    titles.append(link.get_text().replace("\u3000", ""))
 
 print(titles)
