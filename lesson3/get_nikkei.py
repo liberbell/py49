@@ -17,4 +17,5 @@ soup = BeautifulSoup(nikkei_response.text, features="html.parser")
 
 titles = soup.find_all("a", class_="fauxBlockLink_f6t5v6i")
 title_top = soup.find("a", class_="fauxBlockLink_f17mj100")
-print(titles, title_top)
+titles.insert(0, title_top)
+print(titles)
