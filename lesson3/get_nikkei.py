@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 page = 1
-Home_URL = "https://www.nikkei.com/business/net-media/"
+Home_URL = "https://www.nikkei.com/"
 Get_URL = "https://www.nikkei.com/business/net-media/?page=" + str(page)
 
 headers = {
@@ -21,10 +21,17 @@ links.insert(0, links_top)
 # print(links)
 
 titles = []
-body_links = []
 for link in links:
     titles.append(link.get_text().replace("\u3000", ""))
-    body_links.append(link.get("href"))
 
 # print(titles)
-print(body_links)
+
+body_links = []
+for link in links:
+    body_links.append(link.get("href"))
+# print(body_links)
+
+for body_link in body_links:
+    get_body_link = Home_URL + body_link
+    body_response = requests(get_body_link, headers=headers)
+    
