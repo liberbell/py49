@@ -18,3 +18,10 @@ soup = BeautifulSoup(nikkei_response.text, features="html.parser")
 links = soup.find_all("a", class_="fauxBlockLink_f6t5v6i")
 links_top = soup.find("a", class_="fauxBlockLink_f17mj100")
 links.insert(0, links_top)
+# print(links)
+
+titles = []
+for link in links:
+    titles.append(link.get_text())
+
+print(titles)
