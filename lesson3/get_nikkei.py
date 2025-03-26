@@ -39,7 +39,7 @@ for body_link in body_links:
     body_soup = BeautifulSoup(body_response.text, features="html.parser")
 
     try:
-        p_tag = body_soup.find("p", "paragraph_p18mfke4").get_text()
+        p_tag_text = body_soup.find("p", "paragraph_p18mfke4").get_text()
     except:
         pass
-    print(p_tag)
+    body_texts.append(p_tag_text)
