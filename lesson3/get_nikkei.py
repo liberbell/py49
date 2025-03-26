@@ -43,3 +43,5 @@ for body_link in body_links:
     except:
         pass
     body_texts.append(p_tag_text)
+
+print(body_texts)
