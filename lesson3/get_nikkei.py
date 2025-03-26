@@ -44,4 +44,8 @@ for body_link in body_links:
         pass
     body_texts.append(p_tag_text)
 
-print(body_texts)
+# print(body_texts)
+
+image_class = "image_i1obkbgm"
+img_tag = soup.find_all("img", class_=image_class)
+print(imgta)
