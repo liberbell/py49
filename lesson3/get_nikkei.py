@@ -31,12 +31,12 @@ for link in links:
     body_links.append(link.get("href"))
 # print(body_links)
 
+body_texts =[]
 for body_link in body_links:
     get_body_link = Home_URL + body_link
 
     body_response = requests.get(get_body_link, headers=headers)
     body_soup = BeautifulSoup(body_response.text, features="html.parser")
 
-    p_tag = body_soup.find("p", "paragraph_p18mfke4")
-    p_tag2 = p_tag.get_text()
-    print(p_tag2)
+    p_tag = body_soup.find("p", "paragraph_p18mfke4").get_text()
+    print(p_tag)
