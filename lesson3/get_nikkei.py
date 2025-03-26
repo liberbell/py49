@@ -40,6 +40,6 @@ for body_link in body_links:
 
     try:
         p_tag = body_soup.find("p", "paragraph_p18mfke4").get_text()
-    except None:
+    except:
         pass
     print(p_tag)
