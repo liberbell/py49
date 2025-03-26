@@ -32,20 +32,20 @@ for link in links:
 # print(body_links)
 
 body_texts =[]
-for body_link in body_links:
-    get_body_link = Home_URL + body_link
+# for body_link in body_links:
+#     get_body_link = Home_URL + body_link
 
-    body_response = requests.get(get_body_link, headers=headers)
-    body_soup = BeautifulSoup(body_response.text, features="html.parser")
+#     body_response = requests.get(get_body_link, headers=headers)
+#     body_soup = BeautifulSoup(body_response.text, features="html.parser")
 
-    try:
-        p_tag_text = body_soup.find("p", "paragraph_p18mfke4").get_text()
-    except:
-        pass
-    body_texts.append(p_tag_text)
+#     try:
+#         p_tag_text = body_soup.find("p", "paragraph_p18mfke4").get_text()
+#     except:
+#         pass
+#     body_texts.append(p_tag_text)
 
 # print(body_texts)
 
 image_class = "image_i1obkbgm"
-img_tag = soup.find_all("img", class_=image_class)
-print(imgta)
+img_tags = soup.find_all("img", class_=image_class)
+print(img_tags)
