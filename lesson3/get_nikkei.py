@@ -38,5 +38,8 @@ for body_link in body_links:
     body_response = requests.get(get_body_link, headers=headers)
     body_soup = BeautifulSoup(body_response.text, features="html.parser")
 
-    p_tag = body_soup.find("p", "paragraph_p18mfke4").get_text()
+    try:
+        p_tag = body_soup.find("p", "paragraph_p18mfke4").get_text()
+    except None:
+        pass
     print(p_tag)
