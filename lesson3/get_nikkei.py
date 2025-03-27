@@ -28,7 +28,10 @@ for page in range(page_init, page_end + 1):
 
     body_links = []
     for link in links:
-        body_links.append(link.get("href"))
+        try:
+            body_links.append(link.get("href"))
+        except:
+            pass
 
     body_texts =[]
     for body_link in body_links:
