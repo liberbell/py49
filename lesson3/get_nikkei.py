@@ -13,23 +13,17 @@ headers = {
 nikkei_response = requests.get(Get_URL, headers=headers)
 soup = BeautifulSoup(nikkei_response.text, features="html.parser")
 
-# print(soup)
-
 links = soup.find_all("a", class_="fauxBlockLink_f6t5v6i")
 links_top = soup.find("a", class_="fauxBlockLink_f17mj100")
 links.insert(0, links_top)
-# print(links)
 
 titles = []
 for link in links:
     titles.append(link.get_text().replace("\u3000", ""))
 
-# print(titles)
-
 body_links = []
 for link in links:
     body_links.append(link.get("href"))
-# print(body_links)
 
 body_texts =[]
 for body_link in body_links:
