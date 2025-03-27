@@ -8,6 +8,7 @@ Home_URL = "https://www.nikkei.com/"
 
 for page in range(page_init, page_end + 1):
     Get_URL = "https://www.nikkei.com/business/net-media/?page=" + str(page)
+    print(Get_URL)
 
     headers = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
@@ -22,6 +23,7 @@ for page in range(page_init, page_end + 1):
 
     titles = []
     for link in links:
+        print(link.get_text().replace("\u3000", ""))
         titles.append(link.get_text().replace("\u3000", ""))
 
     body_links = []
