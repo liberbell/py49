@@ -48,4 +48,11 @@ body_texts =[]
 
 image_class = "image_i1obkbgm"
 img_tags = soup.find_all("img", class_=image_class)
-print(img_tags)
+# print(img_tags)
+
+image_urls = []
+for img_tag in img_tags:
+    image_urls.append(img_tag.get("src"))
+    # print(img_url)
+
+print(image_urls)
