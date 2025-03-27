@@ -23,7 +23,7 @@ for page in range(page_init, page_end + 1):
 
     titles = []
     for link in links:
-        print(link.get_text().replace("\u3000", ""))
+        print(link)
         titles.append(link.get_text().replace("\u3000", ""))
 
     body_links = []
