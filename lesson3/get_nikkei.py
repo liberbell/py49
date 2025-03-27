@@ -38,8 +38,6 @@ for body_link in body_links:
         pass
     body_texts.append(p_tag_text)
 
-# print(body_texts)
-
 image_class = "image_i1obkbgm"
 img_tags = soup.find_all("img", class_=image_class)
 # print(img_tags)
@@ -47,9 +45,6 @@ img_tags = soup.find_all("img", class_=image_class)
 image_urls = []
 for img_tag in img_tags:
     image_urls.append(img_tag.get("src"))
-    # print(img_url)
-
-# print(image_urls)
 
 news_data = {
     "title": titles,
@@ -58,4 +53,4 @@ news_data = {
 }
 
 df = pd.DataFrame(news_data)
-print(df)
+df.to_csv("nikkei_news.csv")
