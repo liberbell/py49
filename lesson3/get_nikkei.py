@@ -53,4 +53,4 @@ news_data = {
 }
 
 df = pd.DataFrame(news_data)
-df.to_csv("nikkei_news.csv")
+df.to_csv("nikkei_news.csv", index=None, encoding="utf-8-sig")
