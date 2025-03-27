@@ -59,5 +59,9 @@ for img_tag in img_tags:
 
 news_data = {
     "title": titles,
-    "body": body_texts
+    "body_text": body_texts,
+    "image_url": image_urls
 }
+
+df = pd.DataFrame(news_data)
+print(df)
