@@ -6,8 +6,8 @@ page_init = 1
 page_end = 3
 Home_URL = "https://www.nikkei.com/"
 
-titles = []
-body_texts =[]
+
+
 for page in range(page_init, page_end + 1):
     Get_URL = "https://www.nikkei.com/business/net-media/?page=" + str(page)
 
@@ -19,6 +19,8 @@ for page in range(page_init, page_end + 1):
     soup = BeautifulSoup(nikkei_response.text, features="html.parser")
 
     links = soup.find_all("a", class_="fauxBlockLink_f6t5v6i")
+
+    titles = []
     if page == 1:
         links_top = soup.find("a", class_="fauxBlockLink_f17mj100")
         links.insert(0, links_top)
@@ -35,6 +37,7 @@ for page in range(page_init, page_end + 1):
         except:
             pass
 
+    body_texts =[]
     for body_link in body_links:
         get_body_link = Home_URL + body_link
 
