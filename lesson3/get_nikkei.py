@@ -58,6 +58,10 @@ for page in range(page_init, page_end + 1):
     for img_tag in img_tags:
         image_urls.append(img_tag.get("src"))
 
+    print(len(titles), titles)
+    print(len(body_texts), body_texts)
+    print(len(image_urls), image_urls)
+
     news_data = {
         "title": titles,
         "body_text": body_texts,
