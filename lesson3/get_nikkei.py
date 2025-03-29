@@ -59,11 +59,11 @@ for page in range(page_init, page_end + 1):
         image_urls.append(img_tag.get("src"))
 
     print(len(titles))
-    print(titles)
+    # print(titles)
     print(len(body_texts))
-    print(body_texts)
+    # print(body_texts)
     print(len(image_urls))
-    print(image_urls)
+    # print(image_urls)
 
     news_data = {
         "title": titles,
