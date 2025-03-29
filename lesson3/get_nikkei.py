@@ -7,7 +7,7 @@ page_end = 3
 Home_URL = "https://www.nikkei.com/"
 
 
-
+titles = []
 for page in range(page_init, page_end + 1):
     Get_URL = "https://www.nikkei.com/business/net-media/?page=" + str(page)
 
@@ -20,7 +20,7 @@ for page in range(page_init, page_end + 1):
 
     links = soup.find_all("a", class_="fauxBlockLink_f6t5v6i")
 
-    titles = []
+    
     if page == 1:
         links_top = soup.find("a", class_="fauxBlockLink_f17mj100")
         links.insert(0, links_top)
@@ -58,9 +58,12 @@ for page in range(page_init, page_end + 1):
     for img_tag in img_tags:
         image_urls.append(img_tag.get("src"))
 
-    print(len(titles), titles)
-    print(len(body_texts), body_texts)
-    print(len(image_urls), image_urls)
+    print(len(titles))
+    print(titles)
+    print(len(body_texts))
+    print(body_texts)
+    print(len(image_urls))
+    print(image_urls)
 
     news_data = {
         "title": titles,
