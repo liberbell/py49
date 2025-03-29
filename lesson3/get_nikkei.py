@@ -6,9 +6,10 @@ page_init = 1
 page_end = 3
 Home_URL = "https://www.nikkei.com/"
 
+titles = []
+body_texts =[]
 for page in range(page_init, page_end + 1):
     Get_URL = "https://www.nikkei.com/business/net-media/?page=" + str(page)
-    print(Get_URL)
 
     headers = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
@@ -21,8 +22,6 @@ for page in range(page_init, page_end + 1):
     if page == 1:
         links_top = soup.find("a", class_="fauxBlockLink_f17mj100")
         links.insert(0, links_top)
-
-    titles = []
     for link in links:
         try:
             titles.append(link.get_text().replace("\u3000", ""))
@@ -36,7 +35,6 @@ for page in range(page_init, page_end + 1):
         except:
             pass
 
-    body_texts =[]
     for body_link in body_links:
         get_body_link = Home_URL + body_link
 
