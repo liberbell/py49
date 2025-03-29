@@ -8,6 +8,8 @@ Home_URL = "https://www.nikkei.com/"
 
 
 titles = []
+body_texts =[]
+image_urls = []
 for page in range(page_init, page_end + 1):
     Get_URL = "https://www.nikkei.com/business/net-media/?page=" + str(page)
 
@@ -37,7 +39,7 @@ for page in range(page_init, page_end + 1):
         except:
             pass
 
-    body_texts =[]
+    
     for body_link in body_links:
         get_body_link = Home_URL + body_link
 
@@ -54,7 +56,7 @@ for page in range(page_init, page_end + 1):
     img_tags = soup.find_all("img", class_=image_class)
     # print(img_tags)
 
-    image_urls = []
+    
     for img_tag in img_tags:
         image_urls.append(img_tag.get("src"))
 
