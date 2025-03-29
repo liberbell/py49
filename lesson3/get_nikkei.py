@@ -18,8 +18,9 @@ for page in range(page_init, page_end + 1):
     soup = BeautifulSoup(nikkei_response.text, features="html.parser")
 
     links = soup.find_all("a", class_="fauxBlockLink_f6t5v6i")
-    links_top = soup.find("a", class_="fauxBlockLink_f17mj100")
-    links.insert(0, links_top)
+    if page == 1:
+        links_top = soup.find("a", class_="fauxBlockLink_f17mj100")
+        links.insert(0, links_top)
 
     titles = []
     for link in links:
