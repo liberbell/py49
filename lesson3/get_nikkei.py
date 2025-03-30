@@ -68,4 +68,5 @@ for index, row in df.iterrows():
     filename = "img/" + str(index) + ".jpg"
 
     image = requests.get(get_image_url)
-    with open(filename, "w")as f:
+    with open(filename, "wb")as f:
+        f.write(image.content)
