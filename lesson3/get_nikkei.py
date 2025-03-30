@@ -26,6 +26,7 @@ for page in range(page_init, page_end + 1):
     if page == 1:
         links_top = soup.find("a", class_="fauxBlockLink_f17mj100")
         links.insert(0, links_top)
+        
     for link in links:
         try:
             titles.append(link.get_text().replace("\u3000", ""))
@@ -54,18 +55,9 @@ for page in range(page_init, page_end + 1):
 
     image_class = "image_i1obkbgm"
     img_tags = soup.find_all("img", class_=image_class)
-    # print(img_tags)
-
     
     for img_tag in img_tags:
         image_urls.append(img_tag.get("src"))
-
-    print(len(titles))
-    # print(titles)
-    print(len(body_texts))
-    # print(body_texts)
-    print(len(image_urls))
-    # print(image_urls)
 
     news_data = {
         "title": titles,
