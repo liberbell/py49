@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import configparser
+from time import sleep
 
 config_ini = configparser.ConfigParser()
 config_ini.read('config.ini', encoding='utf-8')
@@ -31,4 +32,8 @@ login_element = driver.find_element(By.TAG_NAME, "button")
 login_element.click()
 
 # driver.execute_script("return document.body.scrollHeight")
+driver.execute_script("return window.scrollTo(0, document.body.scrollHeight)")
+sleep(2)
+driver.execute_script("return window.scrollTo(0, document.body.scrollHeight)")
+sleep(2)
 driver.execute_script("return window.scrollTo(0, document.body.scrollHeight)")
