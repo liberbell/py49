@@ -6,7 +6,6 @@ page_init = 1
 page_end = 3
 Home_URL = "https://www.nikkei.com/"
 
-
 titles = []
 body_texts =[]
 image_urls = []
@@ -19,9 +18,7 @@ for page in range(page_init, page_end + 1):
 
     nikkei_response = requests.get(Get_URL, headers=headers)
     soup = BeautifulSoup(nikkei_response.text, features="html.parser")
-
     links = soup.find_all("a", class_="fauxBlockLink_f6t5v6i")
-
     
     if page == 1:
         links_top = soup.find("a", class_="fauxBlockLink_f17mj100")
@@ -39,11 +36,9 @@ for page in range(page_init, page_end + 1):
             body_links.append(link.get("href"))
         except:
             pass
-
     
     for body_link in body_links:
         get_body_link = Home_URL + body_link
-
         body_response = requests.get(get_body_link, headers=headers)
         body_soup = BeautifulSoup(body_response.text, features="html.parser")
 
