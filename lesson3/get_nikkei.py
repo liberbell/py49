@@ -64,4 +64,8 @@ df = pd.DataFrame(news_data)
 # df.to_csv("nikkei_news.csv", index=None, encoding="utf-8-sig")
 
 for index, row in df.iterrows():
-    print(row["image_url"])
+    get_image_url =  row["image_url"]
+    filename = "img/" + str(index) + ".jpg"
+
+    image = requests.get(get_image_url)
+    with open(filename, "w")as f:
