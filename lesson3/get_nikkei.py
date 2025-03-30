@@ -26,7 +26,7 @@ for page in range(page_init, page_end + 1):
     if page == 1:
         links_top = soup.find("a", class_="fauxBlockLink_f17mj100")
         links.insert(0, links_top)
-        
+
     for link in links:
         try:
             titles.append(link.get_text().replace("\u3000", ""))
@@ -59,11 +59,11 @@ for page in range(page_init, page_end + 1):
     for img_tag in img_tags:
         image_urls.append(img_tag.get("src"))
 
-    news_data = {
-        "title": titles,
-        "body_text": body_texts,
-        "image_url": image_urls
+news_data = {
+    "title": titles,
+    "body_text": body_texts,
+    "image_url": image_urls
     }
 
-    df = pd.DataFrame(news_data)
-    df.to_csv("nikkei_news.csv", index=None, encoding="utf-8-sig", mode="a")
+df = pd.DataFrame(news_data)
+df.to_csv("nikkei_news.csv", index=None, encoding="utf-8-sig", mode="a")
