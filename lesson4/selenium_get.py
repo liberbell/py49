@@ -1,5 +1,13 @@
 from selenium import webdriver
 
-chrome = webdriver.Chrome()
+
 URL1= "https://www.google.com"
-chrome.get(URL1)
+URL2 = "https://hosh-it.github.io/scraping-practice-selenium/"
+
+options = get_default_chrome_options()
+options.add_experimental_option("detach", True)
+chrome = webdriver.Chrome()
+chrome.get(URL2)
+
+
+chrome.quit()
