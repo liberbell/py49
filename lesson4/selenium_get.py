@@ -24,5 +24,5 @@ driver.get(URL2)
 username_element = driver.find_element(By.ID, "username")
 password_element = driver.find_element(By.ID, "password")
 
-username.send_keys("hoshi")
-password.send_keys("pass")
+username_element.send_keys(username)
+password_element.send_keys(password)
