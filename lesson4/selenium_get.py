@@ -26,3 +26,6 @@ password_element = driver.find_element(By.ID, "password")
 
 username_element.send_keys(username)
 password_element.send_keys(password)
+
+login_element = driver.find_element(By.TAG_NAME, "button")
+login_element.click()
