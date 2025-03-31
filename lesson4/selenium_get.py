@@ -42,7 +42,13 @@ login_element.click()
 # driver.execute_script("return window.scrollTo(0, document.body.scrollHeight)")
 # driver.save_screenshot("screen3.jpg")
 
-content1 = driver.find_element(By.ID, "top-news-link")
-print(content1.get_attribute("outerHTML"))
-print(content1.get_attribute("href"))
-print(content1.text)
+# content1 = driver.find_element(By.ID, "top-news-link")
+# print(content1.get_attribute("outerHTML"))
+# print(content1.get_attribute("href"))
+# print(content1.text)
+
+contents = driver.find_elements(By.CLASS_NAME, "sub-article-link")
+for content in contents:
+    print(content.get_attribute("outerHTML"))
+    print(content.get_attribute("href"))
+    print(content.text)
