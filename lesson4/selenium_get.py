@@ -52,7 +52,9 @@ content1_data = webdriver.Chrome(options=options)
 content1_data.implicitly_wait(0.5)
 content1_data.get(content1_url)
 
-content1_p = content1_data.find_element(By.TAG_NAME, "p")
+content1_ps = content1_data.find_elements(By.TAG_NAME, "p")
+for content1_p in content1_ps:
+    print(content1_p.text)
 
 contents = driver.find_elements(By.CLASS_NAME, "sub-article-link")
 for content in contents:
