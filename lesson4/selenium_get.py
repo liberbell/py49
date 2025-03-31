@@ -41,3 +41,6 @@ login_element.click()
 # sleep(1)
 # driver.execute_script("return window.scrollTo(0, document.body.scrollHeight)")
 # driver.save_screenshot("screen3.jpg")
+
+content1 = driver.find_element(By.ID, "top-news-link")
+print(content1)
