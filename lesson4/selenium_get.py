@@ -43,4 +43,6 @@ login_element.click()
 # driver.save_screenshot("screen3.jpg")
 
 content1 = driver.find_element(By.ID, "top-news-link")
-print(content1)
+print(content1.get_attribute("outerHTML"))
+print(content1.get_attribute("href"))
+print(content1.text)
