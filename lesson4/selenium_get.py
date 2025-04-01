@@ -48,16 +48,18 @@ content1 = driver.find_element(By.ID, "top-news-link")
 # print(content1.text)
 content1_url = content1.get_attribute("href")
 
-content1_data = webdriver.Chrome(options=options)
-content1_data.implicitly_wait(0.5)
-content1_data.get(content1_url)
+# content1_data = webdriver.Chrome(options=options)
+# content1_data.implicitly_wait(0.5)
+# content1_data.get(content1_url)
 
-content1_ps = content1_data.find_elements(By.TAG_NAME, "p")
-for content1_p in content1_ps:
-    print(content1_p.text)
+# content1_ps = content1_data.find_elements(By.TAG_NAME, "p")
+# for content1_p in content1_ps:
+#     print(content1_p.text)
 
 contents = driver.find_elements(By.CLASS_NAME, "sub-article-link")
 for content in contents:
     print(content.get_attribute("outerHTML"))
     print(content.get_attribute("href"))
     print(content.text)
+
+all_contents = driver.find_elements(By.TAG_NAME, "a")
