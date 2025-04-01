@@ -65,6 +65,8 @@ content1_url = content1.get_attribute("href")
 #     print(content.get_attribute("href"))
 #     print(content.text)
 
+height = driver.execute_script("document.body.scrollHeight")
+print(height)
 driver.execute_script("return window.scrollTo(0, document.body.scrollHeight)")
 sleep(1)
 driver.execute_script("return window.scrollTo(0, document.body.scrollHeight)")
