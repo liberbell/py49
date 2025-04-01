@@ -65,6 +65,11 @@ content1_url = content1.get_attribute("href")
 #     print(content.get_attribute("href"))
 #     print(content.text)
 
+driver.execute_script("return window.scrollTo(0, document.body.scrollHeight)")
+sleep(1)
+driver.execute_script("return window.scrollTo(0, document.body.scrollHeight)")
+sleep(1)
+
 all_contents = driver.find_elements(By.TAG_NAME, "a")
 for single_content in all_contents:
     print(single_content.text)
