@@ -68,4 +68,4 @@ for single_content in all_contents:
 
 all_imgs = driver.find_elements(By.TAG_NAME, "img")
 for single_img in all_imgs:
-    print(single_img.get_attribute("href"))
+    print(single_img.get_attribute("src"))
