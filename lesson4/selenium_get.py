@@ -9,16 +9,19 @@ config_ini.read('config.ini', encoding='utf-8')
 username = config_ini['DEFAULT']['username']
 password = config_ini['DEFAULT']['password']
 
+
 URL1= "https://www.google.com"
 URL2 = "https://hosh-it.github.io/scraping-practice-selenium/"
 
 def get_default_chrome_options():
     options = webdriver.ChromeOptions()
     options.add_argument("--no-sandbox")
+    options.add_argument("--headless")
+    options.add_experimental_option("detach", True)
     return options
 
 options = get_default_chrome_options()
-options.add_experimental_option("detach", True)
+
 driver = webdriver.Chrome(options=options)
 driver.implicitly_wait(0.5)
 
