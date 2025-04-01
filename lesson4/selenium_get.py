@@ -65,14 +65,14 @@ content1_url = content1.get_attribute("href")
 #     print(content.get_attribute("href"))
 #     print(content.text)
 
-height = driver.execute_script("document.body.scrollHeight")
-print(height)
-driver.execute_script("return window.scrollTo(0, document.body.scrollHeight)")
-sleep(1)
-driver.execute_script("return window.scrollTo(0, document.body.scrollHeight)")
-sleep(1)
-driver.execute_script("return window.scrollTo(0, document.body.scrollHeight)")
-sleep(1)
+height = driver.execute_script("return document.body.scrollHeight")
+while True:
+    driver.execute_script("return window.scrollTo(0, document.body.scrollHeight)")
+    sleep(1)
+    new_height = driver.execute_script("return document.body.scrollHeight")
+    if height == new_height:
+        break
+    height = new_height
 
 all_contents = driver.find_elements(By.TAG_NAME, "a")
 for single_content in all_contents:
