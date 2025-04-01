@@ -65,3 +65,7 @@ content1_url = content1.get_attribute("href")
 all_contents = driver.find_elements(By.TAG_NAME, "a")
 for single_content in all_contents:
     print(single_content.text)
+
+all_imgs = driver.find_elements(By.TAG_NAME, "img")
+for single_img in all_imgs:
+    print(single_img.get_attribute("href"))
