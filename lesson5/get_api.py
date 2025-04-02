@@ -23,5 +23,6 @@ import pprint
 # pprint.pprint(data["articles"][0])
 article = data["articles"][0]["content"]
 published = data["articles"][0]["publishedAt"]
+title = data["articles"][0]["title"]
 
-print(published)
+print(published, title)
