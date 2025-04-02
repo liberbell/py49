@@ -17,4 +17,5 @@ response = requests.get(endpoints, params=params)
 # print(response.text)
 
 data = response.json()
-print(data)
+import pprint
+pprint.pprint()(data)
