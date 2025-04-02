@@ -14,4 +14,7 @@ params["q"] = "HPE"
 params["from"] = "2025-03-02"
 
 response = requests.get(endpoints, params=params)
-print(response.text)
+# print(response.text)
+
+data = response.json()
+print(data)
