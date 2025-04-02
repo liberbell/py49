@@ -30,4 +30,5 @@ print(published, title)
 
 news_data_list = []
 for article in data["articles"]:
-    news_data = [data["articles"][0]["content"], data["articles"][0]["publishedAt"],data["articles"][0]["title"]]
+    news_data = [article["content"], article["publishedAt"], article["title"]]
+    news_data_list.append(news_data)
