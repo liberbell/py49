@@ -22,13 +22,15 @@ import pprint
 # pprint.pprint(data)
 # print(len(data["articles"]))
 # pprint.pprint(data["articles"][0])
-article = data["articles"][0]["content"]
-published = data["articles"][0]["publishedAt"]
-title = data["articles"][0]["title"]
+# article = data["articles"][0]["content"]
+# published = data["articles"][0]["publishedAt"]
+# title = data["articles"][0]["title"]
 
-print(published, title)
+# print(published, title)
 
 news_data_list = []
 for article in data["articles"]:
     news_data = [article["content"], article["publishedAt"], article["title"]]
     news_data_list.append(news_data)
+
+print(news_data_list)
