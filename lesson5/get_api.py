@@ -1,5 +1,6 @@
 import configparser
 import requests
+import pandas as pd
 
 config_ini = configparser.ConfigParser(interpolation=None)
 config_ini.read('config.ini', encoding='utf-8')
@@ -26,3 +27,7 @@ published = data["articles"][0]["publishedAt"]
 title = data["articles"][0]["title"]
 
 print(published, title)
+
+news_data_list = []
+for article in data["articles"]:
+    news_data = [data["articles"][0]["content"], data["articles"][0]["publishedAt"],data["articles"][0]["title"]]
