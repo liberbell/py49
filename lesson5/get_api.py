@@ -20,3 +20,4 @@ data = response.json()
 import pprint
 # pprint.pprint(data)
 print(len(data["articles"]))
+pprint.pprint(data["articles"][0])
