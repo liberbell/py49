@@ -36,4 +36,6 @@ for article in data["articles"]:
 # print(news_data_list)
 
 df = pd.DataFrame(news_data_list, columns=["articles", "published", "title"])
-print(df)
+# print(df)
+
+df.to_csv(news_data.csv, encoding="utf-8")
