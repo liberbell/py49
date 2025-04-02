@@ -11,7 +11,7 @@ endpoints = "https://newsapi.org/v2/everything"
 params = {}
 params["apiKey"] = apikey
 params["q"] = "HPE"
-params["from"] = "2025-03-01"
+params["from"] = "2025-03-02"
 
 response = requests.get(endpoints, params=params)
 print(response.text)
