@@ -8,3 +8,6 @@ apikey = config_ini['DEFAULT']['apikey']
 print(apikey, password)
 
 endpoints = "https://newsapi.org/v2/everything"
+
+params = {}
+params["apiKey"] = apikey
