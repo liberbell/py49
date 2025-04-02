@@ -19,5 +19,9 @@ response = requests.get(endpoints, params=params)
 data = response.json()
 import pprint
 # pprint.pprint(data)
-print(len(data["articles"]))
-pprint.pprint(data["articles"][0])
+# print(len(data["articles"]))
+# pprint.pprint(data["articles"][0])
+article = data["articles"][0]["content"]
+published = data["articles"][0]["publishedAt"]
+
+print(published)
