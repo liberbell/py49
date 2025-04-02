@@ -11,3 +11,5 @@ endpoints = "https://newsapi.org/v2/everything"
 
 params = {}
 params["apiKey"] = apikey
+params["q"] = "HPE"
+params["from"] = "2025-01-01"
