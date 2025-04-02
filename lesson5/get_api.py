@@ -12,7 +12,7 @@ endpoints = "https://newsapi.org/v2/everything"
 params = {}
 params["apiKey"] = apikey
 params["q"] = "HPE"
-params["from"] = "2025-03-02"
+params["from"] = "2025-03-20"
 
 response = requests.get(endpoints, params=params)
 # print(response.text)
@@ -33,4 +33,7 @@ for article in data["articles"]:
     news_data = [article["content"], article["publishedAt"], article["title"]]
     news_data_list.append(news_data)
 
-print(news_data_list)
+# print(news_data_list)
+
+df = pd.DataFrame(news_data_list, columns=["articles", "published", "title"])
+print(df)
