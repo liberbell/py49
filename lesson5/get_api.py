@@ -38,4 +38,4 @@ for article in data["articles"]:
 df = pd.DataFrame(news_data_list, columns=["articles", "published", "title"])
 # print(df)
 
-df.to_csv(news_data.csv, encoding="utf-8")
+df.to_csv("news_data.csv", encoding="utf-8")
