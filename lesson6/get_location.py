@@ -1,6 +1,7 @@
 import configparser
 import requests
 from bs4 import BeautifulSoup
+from lxml import html
 
 config_ini = configparser.ConfigParser(interpolation=None)
 config_ini.read('config.ini', encoding='utf-8')
@@ -10,4 +11,7 @@ headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 response = requests.get(get_url1, headers=headers)
 
 soup = BeautifulSoup(response.text, features="html.parser")
-print(soup)
+lxml_data = html.fromstring(str(soup))
+
+get_bus_no = lxml_data.xpath("/html/body/section/div[3]/table/tbody/tr[1]/td/text()")
+print(get_bus_no.text)
