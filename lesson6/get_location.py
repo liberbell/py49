@@ -16,6 +16,6 @@ lxml_data = html.fromstring(str(soup))
 get_bus_no = lxml_data.xpath("//table/tbody/tr/td/text()")
 # print(get_bus_no)
 
-get_bus_time = lxml_data.xpath("//div/div/p/strong")
+get_bus_time = lxml_data.xpath("//div/div/p/strong/text()")
 # /html/body/section/div[3]/div/div[1]/div/div/p[1]/strong
 print(get_bus_time)
