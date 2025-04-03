@@ -13,5 +13,5 @@ response = requests.get(get_url1, headers=headers)
 soup = BeautifulSoup(response.text, features="html.parser")
 lxml_data = html.fromstring(str(soup))
 
-get_bus_no = lxml_data.xpath("//tr/td/text")
+get_bus_no = lxml_data.xpath("//tbody/tr/td/text()")
 print(get_bus_no)
