@@ -29,7 +29,8 @@ for get_bus_no in get_bus_nos:
 
 bus_times = []
 for get_bus_time in get_bus_times:
-    bus_time = [char for char in get_bus_time if char.isalnum()]
+    bus_time_list = [char for char in get_bus_time if char.isalnum()]
+    bus_time = "".join(bus_time_list)
     print(bus_time)
 
 print(bus_nums)
