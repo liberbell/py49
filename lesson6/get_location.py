@@ -37,7 +37,9 @@ bus_time_len = len(bus_times)
 bus_time_text = []
 for i in range(bus_time_len):
     if bus_times[0] == "児童公園前に":
-        print(bus_times[i])
+        if (i + 1) < bus_time_len: 
+            print(bus_times[i] + bus_times[i + 1])
+
         # bus_time_text.append(bus_times[i] + bus_times[i + 1] + bus_times[i + 2])
         i += 1
 
