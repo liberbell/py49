@@ -24,7 +24,12 @@ bus_nums = []
 for get_bus_no in get_bus_nos:
     bus_num = get_bus_no.replace("\r\n\t\t\t", "")
     bus_num = get_bus_no.replace("\r\n\t\t", "")
-    bus_num = get_bus_no.replace("\t", "")
+    # bus_num = get_bus_no.replace("\t", "")
     bus_nums.append(bus_num)
+
+bus_times = []
+for get_bus_time in get_bus_times:
+    bus_time = [char for char in get_bus_time if char.isalnum()]
+    print(bus_time)
 
 print(bus_nums)
