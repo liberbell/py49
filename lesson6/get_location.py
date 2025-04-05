@@ -32,5 +32,9 @@ for get_bus_time in get_bus_times:
     bus_time = "".join(bus_time_list)
     bus_times.append(bus_time)
 
-print(bus_times)
-print(bus_nums)
+print(len(bus_times))
+bus_time_len = len(bus_times)
+for time_text, i in bus_time_len:
+    if 
+
+# print(bus_nums)
