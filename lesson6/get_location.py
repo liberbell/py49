@@ -22,15 +22,15 @@ get_bus_times = lxml_data.xpath("//div/div/p[1]/strong/text()")
 # print(get_bus_times)
 bus_nums = []
 for get_bus_no in get_bus_nos:
-    bus_num = get_bus_no.replace("\r\n\t\t\t", "")
-    bus_num = get_bus_no.replace("\r\n\t\t", "")
-    # bus_num = get_bus_no.replace("\t", "")
+    bus_num_list = [char for char in get_bus_no if char.isalnum()]
+    bus_num = "".join(bus_num_list)
     bus_nums.append(bus_num)
 
 bus_times = []
 for get_bus_time in get_bus_times:
     bus_time_list = [char for char in get_bus_time if char.isalnum()]
     bus_time = "".join(bus_time_list)
-    print(bus_time)
+    bus_times.append(bus_time)
 
+print(bus_times)
 print(bus_nums)
