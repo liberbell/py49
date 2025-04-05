@@ -32,9 +32,15 @@ for get_bus_time in get_bus_times:
     bus_time = "".join(bus_time_list)
     bus_times.append(bus_time)
 
-print(len(bus_times))
+# print(len(bus_times))
 bus_time_len = len(bus_times)
-for time_text, i in bus_time_len:
-    if 
+bus_time_text = []
+for i in range(bus_time_len):
+    if bus_times[0] == "児童公園前に":
+        bus_time_text.append(bus_times[i] + bus_times[i + 1] + bus_times[i + 2])
+        i += 1
+
+print(bus_time_text)
+
 
 # print(bus_nums)
