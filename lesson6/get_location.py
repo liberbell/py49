@@ -39,10 +39,11 @@ for i in range(bus_time_len):
     if bus_times[i] == "児童公園前に":
         if (i + 2) < bus_time_len: 
             print(bus_times[i] + bus_times[i + 1] + " " + bus_times[i + 2])
-            i += 2
+            i += 3
+            print(i, bus_times[i])
 
         # bus_time_text.append(bus_times[i] + bus_times[i + 1] + bus_times[i + 2])
-    elif bus_times[i] == "藤沢駅*":
+    elif bus_times[i] in "藤沢駅":
         print(bus_times[i])
         i += 1
 
