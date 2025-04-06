@@ -14,12 +14,8 @@ soup = BeautifulSoup(response.text, features="html.parser")
 lxml_data = html.fromstring(str(soup))
 
 get_bus_nos = lxml_data.xpath("//tbody/tr[1]/td/text()")
-# print(get_bus_nos)
 
 get_bus_times = lxml_data.xpath("//div/div/p[1]/strong/text()")
-# /html/body/section/div[3]/div/div[1]/div/div/p[1]/strong
-# /html/body/section/div[6]/div/div[1]/div/div/p[1]/strong
-# print(get_bus_times)
 bus_nums = []
 for get_bus_no in get_bus_nos:
     bus_num_list = [char for char in get_bus_no if char.isalnum()]
@@ -35,12 +31,12 @@ for get_bus_time in get_bus_times:
 # print(len(bus_times))
 bus_time_len = len(bus_times)
 bus_time_text = []
+bus_num_position = 0
 for i in range(bus_time_len):
     if bus_times[i] == "児童公園前に":
         if (i + 2) < bus_time_len: 
-            print(bus_times[i] + bus_times[i + 1] + " " + bus_times[i + 2])
+            bus_time_text.append(bus_times[i] + bus_times[i + 1] + " " + bus_times[i + 2])
             i += 3
-            # print(i, bus_times[i])
 
         # bus_time_text.append(bus_times[i] + bus_times[i + 1] + bus_times[i + 2])
     # elif bus_times[i] in "藤沢駅":
@@ -48,6 +44,7 @@ for i in range(bus_time_len):
     #     i += 1
 
     else:
+        bus_num_position += 1
         i += 1
         pass
 
