@@ -49,6 +49,3 @@ for i in range(bus_time_len):
         pass
 
 print(bus_time_text)
-
-
-# print(bus_nums)
